@@ -1,9 +1,10 @@
 import React from "react";
+import "./SiteFooter.css";
 
 export default function SiteFooter() {
   return (
-    <footer>
-      <p>footer text</p>
+    <footer className="site-footer">
+      <span>footer text</span>
     </footer>
   );
 }
