@@ -8,11 +8,10 @@ export default function NewsletterForm() {
 
   function handleChange(event) {
     const targetValue = event.target.value;
-    const targetId = event.target.id;
-    let newformData = { ...formData };
-    newformData[targetId] = targetValue;
-    console.log(newformData);
-    setFormData(newformData);
+    const targetName = event.target.name;
+    let newFormData = { ...formData };
+    newFormData[targetName] = targetValue;
+    setFormData(newFormData);
   }
 
   function handleSubmit(event) {
@@ -23,14 +22,14 @@ export default function NewsletterForm() {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        id="email"
+        name="email"
         value={formData.email}
         placeholder="email"
         onChange={handleChange}
         type="text"
       />
       <input
-        id="firstName"
+        name="firstName"
         value={formData.firstName}
         placeholder="Name"
         onChange={handleChange}
