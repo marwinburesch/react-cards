@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function SiteHeader() {
+export default function SiteHeader(props) {
   return (
     <header>
-      <h1>Website Title</h1>
+      <h1>A website about {props.title}</h1>
     </header>
   );
 }

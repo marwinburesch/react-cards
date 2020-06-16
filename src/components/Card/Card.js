@@ -3,11 +3,11 @@ import "./Card.css";
 import CardText from "./CardText";
 import CardImage from "./CardImage";
 
-export default function Card() {
+export default function Card(props) {
   return (
     <article className="card">
-      <CardText />
-      <CardImage />
+      <CardText title={props.content.title} text={props.content.text} />
+      <CardImage src={props.content.imageSource} />
     </article>
   );
 }
