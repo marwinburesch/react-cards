@@ -4,7 +4,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteContent from "./components/SiteContent";
 import SiteFooter from "./components/SiteFooter";
 
-const cardContent = [
+const animalArray = [
   {
     title: "Bisons",
     text:
@@ -22,10 +22,22 @@ const cardContent = [
 ];
 
 function App() {
+  const [cardContent, setCardContent] = React.useState(animalArray[0]);
+
+  function setBisonsAsContent() {
+    setCardContent(animalArray[0]);
+  }
+
+  function setWolvesAsContent() {
+    setCardContent(animalArray[1]);
+  }
+
   return (
     <div className="app">
-      <SiteHeader title={cardContent[0].title} />
-      <SiteContent cardContent={cardContent[0]} />
+      <button onClick={setBisonsAsContent}>Bisons</button>
+      <button onClick={setWolvesAsContent}>Wolves</button>
+      <SiteHeader title={cardContent.title} />
+      <SiteContent cardContent={cardContent} />
       <SiteFooter />
     </div>
   );
