@@ -22,22 +22,22 @@ const animalArray = [
 ];
 
 function App() {
-  const [cardContent, setCardContent] = React.useState(animalArray[0]);
+  const [content, setContent] = React.useState(animalArray[0]);
 
   function setBisonsAsContent() {
-    setCardContent(animalArray[0]);
+    setContent(animalArray[0]);
   }
 
   function setWolvesAsContent() {
-    setCardContent(animalArray[1]);
+    setContent(animalArray[1]);
   }
 
   return (
     <div className="app">
       <button onClick={setBisonsAsContent}>Bisons</button>
       <button onClick={setWolvesAsContent}>Wolves</button>
-      <SiteHeader title={cardContent.title} />
-      <SiteContent cardContent={cardContent} />
+      <SiteHeader title={content.title} />
+      <SiteContent cardContent={content} />
       <SiteFooter />
     </div>
   );
