@@ -3,6 +3,7 @@ import "./App.css";
 import SiteHeader from "./components/SiteHeader";
 import SiteContent from "./components/SiteContent";
 import SiteFooter from "./components/SiteFooter";
+import fetchAnimals from "./utils/fetchAnimals";
 
 const animalArray = [
   {
@@ -16,12 +17,6 @@ const animalArray = [
     imageSource: "",
   },
 ];
-
-async function fetchAnimals() {
-  return fetch("https://api.jsonbin.io/b/5ee9c253ccc9877ac37d56e1")
-    .then((response) => response.json())
-    .then((data) => data.animals);
-}
 
 function App() {
   const [content, setContent] = React.useState(animalArray[0]);
